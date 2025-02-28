@@ -4,10 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "lint": "next lint"
+    "deploy": "node ./scripts/deploy.mjs"
   },
   "engines": {
     "node": "20.16"
@@ -23,6 +20,7 @@
     "@types/react": "^18.2.48",
     "eslint": "^8.56.0",
     "eslint-config-next": "^13.4.19",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.3.3"
   }
 }
