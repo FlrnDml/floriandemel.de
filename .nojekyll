@@ -1,0 +1,1 @@
+This is needed to disable the static builder Jekyll on GitHub Pages as it destroys NextJS static builds.
