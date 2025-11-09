@@ -1,9 +1,6 @@
 # How to Pass AZ-104 or Any Other Azure Certificate
-
 ## TL;DR
-Preparing for an Azure certification like the AZ-104 is not about memorizing everything — it is about understanding patterns in the questions and topics. Pass your next exam by choosing the right certificate for your level, use Microsoft Learn and external materials to build your foundation, and then focus on recognizing recurring patterns across exam topics. Manage your time well, use practice questions wisely, and keep your preparation structured — that is how you pass any Azure exam confidently.
-
-This post will outline a practical approach of Azure exam preparation based on my personal experience, so you know how to prepare for an Azure exam effectively.
+Preparing for an Azure certification like the AZ-104 is not about memorizing everything - it is about understanding patterns in the questions and topics. In this post, I will tell my experience about Azure exam preparation, so you know how to approach your own certification journey.
 
 ## Introduction
 
@@ -21,7 +18,7 @@ My personal hint when it comes to certificate selection: **Match your current sk
 
 For sure you would be able to take multiple exams shortly after one another or skip some certs overall, to show for a job interview that you are at an even higher level. This is exactly what I aimed to do starting my way with Azure. And it might be a strategy that works.
 
-**But** be aware, that there is not only knowledge required for exams to be learned from Microsoft’s material. There is additional knowledge and experience expected from your professional background with Azure. You might be able to make up for that missing experience with enough learning and preparation, but it is the hard way. Be aware that such a tactic requires more preparation time, so it might be a bad choice for someone starting with certificates overall.
+**But** be aware, that there is not only knowledge required for exams to be learned from Microsoft’s material. There is additional knowledge and experience expected from your professional background with Azure. You might be able to make up for that missing experience with enough learning and preparation, but it is the hard way. Be aware that such a tactic requires more preparation time and exam experience, so it might be a bad choice for someone starting with certificates overall.
 
 ## Preparation Material
 
@@ -33,8 +30,8 @@ The default preparation material everyone gets to see is on the overview page of
 
 - **MS Learn: Exam Courses** - Microsoft offers self-directed learning courses for each certificate, which covers all topics required for the exam. *E.g. For the AZ-104 Microsoft Azure Administrator exam. The [Course AZ-104T00-A: Microsoft Azure Administrator](https://learn.microsoft.com/en-us/training/courses/az-104t00).*
 - **MS Learn: Documentation** - Microsoft offers openly available documentation for all Azure resources and Microsoft products. This is the reference for all topics of your exam and a great tool for information about the ecosystem overall. Even better, the [MS Learn page](https://learn.microsoft.com/en-us/) is available in some exams to look up details, so it pays off to have experience using it.
-- **MS Learn: Prep Videos** - Some certificates even have dedicated learning videos to get into the topics easier (*e.g. the [videos to start with the az-104 exam](https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-104-manage-azure-identities-and-governance-1-of-5)*). Even if they are linked at the certificate overview page, I personally did not get involved with them from the start up. Don´t make the same mistake and start with these videos into the exam topics.
-- **MS Learn: Learning Assessment** - To get a feeling how real exam questions are working, Microsoft offers a practice assessment. A multiple choice quiz with questions close to a real exam. This is a great way to get a feeling for the real exam, but don´t become to confident about a high score. Often there is a limited amount of questions and more work needed to pass the real thing reliably.
+- **MS Learn: Prep Videos** - Some certificates even have dedicated learning videos to get into the topics easier (*e.g. the [videos to start with the az-104 exam](https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-104-manage-azure-identities-and-governance-1-of-5)*). Even if they are linked at the certificate overview page, I personally did not get involved with them from the start up. Do not make the same mistake and start with these videos into the exam topics.
+- **MS Learn: Learning Assessment** - To get a feeling how real exam questions are working, Microsoft offers a practice assessment. A multiple choice quiz with questions close to a real exam. This is a great way to get a feeling for the real exam, but do not become to confident about a high score. Often there is a limited amount of questions and more work needed to pass the real thing reliably.
 - **MS Learn: Exam Sandbox** - Besides the practice assessment, which does not use the same UI as the real exam, there is a Exam Sandbox to get familiar with its user interface. It does not include any questions related to your exam but provides a great opportunity to peek into your exam session. 
 
 ### External Resources
@@ -57,7 +54,7 @@ Next, we want to look at the most important part of each preparation. You can th
 After you made the decision to acquire one of Azure´s exams, you will first need to get into exam´s topics. This is the part where you are preparing for the exam the „good old" way by going through Microsoft´s preparation materials and remembering all the information about Azure´s products.
 
 Your most important overview of the exam topics, is the topic overview of your exams **study guide**. It is a list of all topics needed for your exam. Make sure to have the guide for your respective exam always on hand. You will find the overview directly at the exam page (*e.g. the [study guide of the AZ-104 exam](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104)*). Become familiar with each of the listed topics. Your first step will automatically be the Microsoft Learn exam courses. Focus especially on the **practical exercises** coming up, which will guide your through a learning version of the Azure Portal, as practical knowledge is fairly likely to be tested in the exams.
-´
+
 I myself intensively went through all the learning paths, and went through most practical exercises for my AZ-104 exam. This took me at least a good 2 days, but was worth it.
 
 After finishing the exam courses, you will feel at least 80% ready for the exam. But do not get fooled to much. After doing your first **learning assessment**, you will probably be back on the ground. For most exams you might be at around 30% of your preparation journey now - just to throw in a guess. Ask yourself:
@@ -104,9 +101,9 @@ To make an example, the following question could be one of the questions coming 
 
 ___
 Question: *Your Microsoft Entra tenant and on-premises Active Directory domain contain multiple users.
-**You need to enforce MFA for specific SaaS apps integrated with SSO The solution must minimize costs.**
+You need to enforce MFA for specific SaaS apps integrated with SSO The solution must minimize costs.
 Which Microsoft Entra ID edition should you use?
-Select only one answer.*troube
+Select only one answer.*
 
 - Microsoft Entra ID Free
 - Microsoft Entra ID P1
@@ -134,7 +131,7 @@ Most questions in Azure exams are multiple choice questions. That is great, beca
 
 ### Time Management, Exam Design & MS Learn
 
-There is not lots of time in your Azure certificates exam, but from my perspective the time is not rushing to fast either. One thing that might get you into trouble is the option to open MS Learn in the exam (which is possible in many, but not all, exams). It is tempting to look up details you do not know. But don´t spend to much time doing so. Go through the questions you can answer first, mark the ones you can not answer and before finishing a section of the exam, search for all MS Learn details at once with a fixed number of minutes. So you will be able to manage your time properly.
+There is not lots of time in your Azure certificates exam, but from my perspective the time is not rushing to fast either. One thing that might get you into trouble is the option to open MS Learn in the exam (which is possible in many, but not all, exams). It is tempting to look up details you do not know. But do not spend to much time doing so. Go through the questions you can answer first, mark the ones you can not answer and before finishing a section of the exam, search for all MS Learn details at once with a fixed number of minutes. So you will be able to manage your time properly.
 
 Be aware that most exams are divided into multiple sections. You will not be able to repeat all question at the end, each sections is like a mini exam that is over as soon as you finished it. So be aware of the structure and plan your MS Learn time accordingly.
 
