@@ -66,31 +66,6 @@ const Home: NextPage = () => {
           </div>
         </header>
         
-        <Section title="Skills & Focus Areas">
-          <div className="grid">
-            <Card 
-              title="Cloud Computing" 
-              categories={["Azure", "Infrastructure as Code", "Containerization"]}
-            >
-              <p>Designing and implementing scalable cloud infrastructure with automation at its core. Specialized in Azure environments and container orchestration solutions.</p>
-            </Card>
-            
-            <Card 
-              title="Software Architecture" 
-              categories={["Microservices", "Domain Driven Design", "Maintainability"]}
-            >
-              <p>Creating resilient, modular software systems that prioritize maintainability and business value. Experienced in designing microservice architectures that balance complexity with technical requirements.</p>
-            </Card>
-            
-            <Card 
-              title="Fullstack & DevOps" 
-              categories={["Frontend", "Backend", "CI/CD"]}
-            >
-              <p>Developing comprehensive platform solutions for web technologies across the full stack, with a focus on implementing efficient delivery pipelines and robust DevOps practices to ensure reliable, continuous deployment.</p>
-            </Card>
-          </div>
-        </Section>
-
         <Section title="More About Me">
           <div className="grid">
             <Card 
@@ -120,90 +95,6 @@ const Home: NextPage = () => {
                   <FaDownload style={{marginRight: '0.5rem'}} /> View Paper
                 </a>
               </div>
-            </Card>
-          </div>
-        </Section>
-
-        <Section title="My Book Recommendations">
-          <div className="grid">
-            <Card title="A Philosophy of Software Design">
-              <p className="book-author">John Ousterhout</p>
-              <p className="book-description">
-                Deep insights on reducing complexity through coding techniques like strategic module boundaries and information hiding. My fundamental resource for designing maintainable software systems.
-              </p>
-            </Card>
-            
-            <Card title="Team Topologies">
-              <p className="book-author">Matthew Skelton & Manuel Pais</p>
-              <p className="book-description">
-                A practical framework for the design and interaction of software development teams, aligning organizations and software architecture. A must-read for modern software teams and believers of Conway's Law.
-              </p>
-            </Card>
-            
-            <Card title="The Phoenix Project">
-              <p className="book-author">Gene Kim, Kevin Behr & George Spafford</p>
-              <p className="book-description">
-                A business novel illustrating DevOps principles through an engaging crisis-management story. Essential reading on connecting IT operations with business objectives and a nice introduction to DevOps culture.
-              </p>
-            </Card>
-          </div>
-        </Section>
-
-        <Section title="Certifications">
-          <div className="grid">
-            <Card 
-              title="Microsoft Certified: Azure Fundamentals" 
-              categories={["Cloud", "Microsoft", "Infrastructure"]}
-            > 
-              <p>Validation of foundational knowledge in cloud services and Microsoft Azure. Covers core Azure concepts, services, security, pricing and support models.</p>
-              <p className="cert-details">
-                <strong>Issuer:</strong> Microsoft<br />
-                <strong>Date:</strong> October 2023<br />
-                <strong>Credential ID:</strong> 5363CDC387C9D2C3
-              </p>
-            </Card>
-            
-            <Card 
-              title="IHK Ausbilder-Eignungsverordnung (AEVO)" 
-              categories={["Professional Development"]}
-            > 
-              <p>Qualification for training and educating apprentices according to German standards. Demonstrates competence in planning, conducting, and evaluating professional training programs.</p>
-              <p className="cert-details">
-                <strong>Issuer:</strong> IHK Region Stuttgart<br />
-                <strong>Date:</strong> June 2023
-              </p>
-            </Card>
-            
-            <Card 
-              title="Professional Scrum Master™ I (PSM I)" 
-              categories={["Agile", "Project Management", "Scrum"]}
-            > 
-              <p>Certification in fundamental Scrum framework knowledge and its practical application. Validates understanding of Scrum theory, practices, roles, and team facilitation.</p>
-              <p className="cert-details">
-                <strong>Issuer:</strong> Scrum.org<br />
-                <strong>Date:</strong> October 2022<br />
-                <strong>Credential ID:</strong> 1125126
-              </p>
-            </Card>
-          </div>
-        </Section>
-
-        <Section title="Education">
-          <div className="grid">
-            <Card title="Master of Science">
-              <h4 className="study-title">Computer Science and Media</h4>
-              <p className="education-text">Advanced studies in software management, software architecture and cloud-native application development.</p>
-              <p className="education-details">
-                <strong>Institution:</strong> Stuttgart Media University
-              </p>
-            </Card>
-            
-            <Card title="Bachelor of Science">
-              <h4 className="study-title">Media Engineering</h4>
-              <p className="education-text">Interdisciplinary program combining engineering, business management, and media technology. Focus on technical project management and software development methodologies.</p>
-              <p className="education-details">
-                <strong>Institution:</strong> Stuttgart Media University
-              </p>
             </Card>
           </div>
         </Section>
