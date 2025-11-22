@@ -1,0 +1,26 @@
+{
+  "name": "floriandemel.de",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "deploy": "node ./scripts/deploy.mjs"
+  },
+  "engines": {
+    "node": "20.16"
+  },
+  "dependencies": {
+    "next": "^15.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^13.4.19",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.3.3"
+  }
+}
