@@ -6,13 +6,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Florian Demel</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Personal website of Florian Demel." />
+        <title>Florian Demel | Platform Engineer</title>
+        <meta name="description" content="Platform Engineer specializing in cloud computing, software architecture, and fullstack development." />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* Fixed background image with overlay */}
-      <div className="background-wrapper"></div>
-      <div className="background-overlay"></div>
+
+      <div className="background"></div>
       
       {/* Content wrapper */}
       <div className="content-wrapper">

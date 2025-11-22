@@ -18,12 +18,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <Head>
-        <title>Florian Demel | Platform Engineer</title>
-        <meta name="description" content="Platform Engineer specializing in cloud computing, software architecture, and fullstack development." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <div className="container">
         {/* Streamlined Header Section with enhanced circular profile picture */}
         <header className="hero-section">
@@ -101,9 +95,6 @@ const Home: NextPage = () => {
 
         <footer className="footer">
           <p>© {new Date().getFullYear()} Florian Demel. All rights reserved.</p>
-          <p className="photo-credit">
-            Background photo: <a href="https://www.pexels.com/de-de/foto/foto-von-berg-und-baumen-1139429/" target="_blank" rel="noopener noreferrer">https://www.pexels.com/de-de/foto/foto-von-berg-und-baumen-1139429/</a>
-          </p>
           <p>
             <Link href="/impressum" style={{ marginRight: '1rem', color: 'var(--text-secondary)' }}>Impressum</Link>
             <Link href="/datenschutz" style={{ color: 'var(--text-secondary)' }}>Datenschutz</Link>
