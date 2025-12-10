@@ -36,7 +36,7 @@ The following criteria are important for me.
 
 ## Content & Feedback Criteria - Beginning
 
-- TLDR: Make sure at the beginning is a TLDR section, if the post is longer than 5min to read.
+- TLDR: Make sure at the beginning is a TLDR section
 
 ## Content & Feedback Criteria - Main
 
