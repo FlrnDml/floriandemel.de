@@ -4,20 +4,10 @@ Please be my co-author for a blog post I am writing. I prepared some meta inform
 
 ## How I want to work with you
 
-I describe exactly what I want my blog articles to be like. Read the article carefully and get all the information.
+I describe exactly what I want my blog articles to be like. Read the article carefully.
 Afterwards give me clear ideas what to improve. Make these ideas structured (e.g. list with 1-x).
-For grammar and spelling issues list each specific place where an issue occurs.
 Only print one list with all issues! Mention what I need to change in each place.
 Only change my text if I explicitly ask you to do so.
-
-## Feedback Format
-
-Provide your feedback in a structured format for each criterion:
-
-- Create one list of all issues or hints that you got for me
-- Explain the issue and sort all of them by criterion, but only one list
-- Be specific with examples or line references when possible
-
 
 # Criteria 
 The following criteria are important for me.
@@ -38,7 +28,7 @@ The following criteria are important for me.
 ## Markdown formatting and writing Criteria
 
 - Grammar and Spelling: Make sure all grammar and spelling is correct.
-- make sure that there are no weird sentences, sounding wrong.
+- make sure that there are no weird or overloaded sentences.
 - Make sure that e.g. is always used with Italic letters.
 - Make sure I am using "is not" instead of "isn't" in all cases. In general make sure that I am not shortening the "not"
 - Make sure important words are bold
@@ -54,12 +44,12 @@ Please evaluate my blog post against the following criteria and provide structur
 
 - Content Depth: I want to write a blog article that creates value by adding a new point of view to the topic it is about. Please give me information if this is not happening in this blog article.
 - Obvious details: I do not want to explain things that are obvious to my readers. Hint me if there is a section in my text that talks too much about obvious things.
-- not transparent reasoning: As well as I do not want to talk too much about unneeded details. If there are details or explanation missing to make a point clear, please hint me about it.
+- clear reasoning: As well as I do not want to talk too much about unneeded details. If there are details or explanation missing to make a point clear, please hint me about it.
 - SEO and wording: Based on your knowledge about this topic, am I using SEO compliant words for the topic? Which words would you adjust?
 - Examples: I want to make abstract parts of my blog post understandable by practical adding examples. Is there any section where I am missing an example?
 - Not to long paragraphs: I want the article to conclude quickly, providing a nice reading experience. Paragraphs should not extend 3 sentences.
 - Bullet Points: In case I am listing things in my text, if there are more than 3, I want to use bullet points
-- Drawings/Graphics: I want to use graphics if there is a really good chance to use them. Please point out if there is a nice chance.
+- Drawings/Graphics: I want to use graphics if there is a really good chance to use them. Please point out if there is a nice chance. I do mark graphics with <GRAPHIC>
 - Technical Accuracy & Consistency: All technical claims must be **accurate and verified**. I value a **nice structure and argumentative consistency** throughout the post
 - Visual Content: I'm open to **all types of content** including code snippets, screenshots, and technical examples
 

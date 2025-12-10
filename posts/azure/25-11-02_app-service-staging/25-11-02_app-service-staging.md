@@ -4,119 +4,112 @@
 I have been working for a quite a while now with **Azure App Service Deployment Slots**, and the experience has always been great. It feels seamless and safe to deploy applications by swapping a container from one App Service slot to another. 
 
 When working in a professional environment with App Services, deployment slots will most likely become a topic at one point. This is because: 
-- Your team wants to enable **blue-green deployments** to test a newly build application in a production environment before replacing the old version with the new one. - [For more information, refer to Red Hats great docs of this topic.](https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment)
-- Or your team wants to create a second **deployment environment** for your team or organization to integrate applications before deploying them to production. - [For more information, refer to Martin Fowlers great Blog about continuous integration.](https://martinfowler.com/articles/continuousIntegrationhtml#TestInACloneOfTheProductionEnvironment)
+- Your team wants to enable **blue-green deployments** to test a newly build application in a production like environment before replacing the old version with the new one. - [For more information, refer to Red Hats great docs of this topic.](https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment)
+- Or your team wants to create a second **deployment environment** for your team or organization to integrate applications with one another before deploying them to production. - [For more information, refer to Martin Fowlers great Blog about continuous integration.](https://martinfowler.com/articles/continuousIntegrationhtml#TestInACloneOfTheProductionEnvironment)
 
-Both strategies are well known and often implemented at the same time. To enable blue-green deployments and deployment environments side-by-side, you sadly need to **make some architectural decision early on**.
+Both strategies are well known and often implemented at the same time. To enable blue-green deployments and deployment environments side-by-side, you seriously need to **make some architectural decision early on**.
 
-To prepare you for these decisions, I want to outline my ideal approach for an App Service development environment setup, discussing its most critical topics:
+To prepare you for these decisions, I want to outline my preferred approach for an App Service setup and discussing its most critical topics to enable environments and slots:
 
 - Environment subscription structure
 - Deployment with Deployment Slots
 - Sideeffects of Deployment Slots
 
-*This post will dive pretty deep into the topic, if you are not familiar with App Service deployment Slots, have a look at have a look at [Microsoft's deployment slot docs.](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots?tabs=portal)*
+*Please note: This post will dive pretty deep into the topic, if you are not familiar with App Service deployment Slots, have a look at have a look at [Microsoft's deployment slot docs.](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots?tabs=portal)*
 
-## Ideal Approach
+## Preferred Approach
 
-While a deployment slot is basically another - closely related - App Service running on your App Service Plan next to your already existing "main" App Service. It comes with one main functionality: You are able to **configure the deployment slots and the main slot of each App Service independently**, by setting different App Settings for each slot (Microsoft calls this "unswappable settings"). This way you are able to configure an **isolated development environment** around each of the slots.
+### Deployment Slots basics
 
-*For example, you could configure your main App Service for a production environment with a connection to the production database of your system and the url "app.com". Your deployment slot on the other side could get a second development database, and the url preview.app.com - basically an isolated preview environment next to your production environment.*
+While a deployment slot is basically another - closely related - App Service running on your App Service Plan next to your already existing "main" App Service. It comes with two important features:
+1.  You are able to **configure the deployment slots and the main slot of each App Service independently**, by setting different app settings for each slot. Microsoft calls this "unswappable settings", settings that always stay with one slot, not with the container running inside. This way you are able to configure an **isolated development environment** around each of the slots.
+2. You are able to **swap slots**. That means you can run new containers on a deployment slot in a specific development environment before swapping exactly that already running version to the main slot. If you are not satisfied with the way the new container performs in the main slot, you are always able to **roll back** the new container and swap the slots back to its previous version.
 
-<PICTURE>
+Besides these 2 features, Azure does a lot of advertisement itself for the feature. [Have a look at the docs](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots?tabs=portal) to get a broad picture of all the features coming with App Service slots. To keep thing less complicated, we will stick to these 2 features for the moment.
 
-This is exactly the setup I want to propose as the ideal App Service setup. It follows [Microsoft's continuous deploy code recommendation](https://learn.microsoft.com/en-us/azure/app-service/deploy-best-practices#continuously-deploy-code) and keeps thing simple. The following benefits are included:
+### Example
 
-- **Swap warmed up slots towards production**: Run new code versions on a preview slot in a development environment before swapping exactly that warmed up (already running) version to the main slot (your production environment).
-- **Roll back**: Swap newly deployed code version back if there are issues coming up in production quickly.
+To illustrate a typical setup, I want to make a simple example:
 
-At this point, Azure does a lot of advertisement itself for the feature. [Have a look at the docs](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots?tabs=portal) to get a broad picture of all the features coming with App Service slots. 
+- We want to run **one application** on Azure App Services in **two environments**: Preview (*preview.app.com*)  and Production (*app.com*).
+- Each application uses **one Azure SQL database** and stores its environment secrets in a **Key Vault**. Both resources are needed in each environment.
+- To provision the App Service main slot (production environment) and the App Service deployment slot (preview environment) there must be **one App Service Plan** resource that hosts the slots.
+- To provision Azure SQL databases, there must be **one SQL Database Server** that hosts the production and preview databases.
 
-Overall you want to have this feature working for you. To make that go as smooth as possible, I want to speak about the important architectural decision from now on.
+To enable the both development environments and to swap slots between preview and production my preferred setup looks like this: 
+
+- **One Subscription**: All resources of our example are living in one subscription. 
+- **Shared Resource Groups**: The App Service resource with the main and the deployment slot, the App Service plan resources and the Azure SQL Server are cross-environment resources, they are needed by the production and preview environment. Because of that they are part of a "shared" resource group.
+- **Production Resource Groups**: The production database and a production Key Vault are an isolated part of the production environments, they are provisioned in a production resource group.
+- **Preview Resource Groups**:  The preview database and a preview Key Vault are an isolated part of the preview environments, they are provisioned in a preview resource group.  
+
+
+<GRAPHIC>
+
+With a setup like this, we are able to have 2 isolated environments for both applications (preview & production). Both having their own persistent database and separated secrets in their Key Vaults. As we are using one App Service we are still able to use the swap slot features between environments.
+
+To outline the architectural decisions outlining this setup, the next sections are diving deeper into the technical details...
+
 
 ## Environment subscription structure
 
-Azure recommends to use [different Azure subscriptions for each development environment](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/management-application-environments) in its cloud adoption framework. But I found this **contrary** to the default App Service deployment slot setup because of one main reason:
+Maybe you already thought about that: Azure typically recommends to use [different Azure subscriptions for each development environment](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/management-application-environments) in its cloud adoption framework. But I found this **contrary** to the default App Service deployment slot setup because of one main reason:
 
-**Each slot must adhere to exactly one App Service Plan!** This is critical because each App Service Plan can  host slots only in the same subscription it is living in. Therefor it is not possible to use multiple deployment slots of one App Service between the different subscriptions. What **prevents swaps between the App Services of the different environments entirely**. 
+**All environments must connect to exactly one App Service resource.** This is critical because each App Service can create slots only as part of the same resource and resource group. Therefor it is not possible to use multiple deployment slots of one App Service between the different subscriptions or even resource groups. 
+That's why I prefer to have a shared resource group hosting the App Service. Any other approach would **prevent swaps between the App Services runtimes of the different environments entirely**. 
 
-To solve this issue, there are 2 options:
-- Provision your entire system with all its development environments in exactly one subscription, and structure your resources with resource groups. This is as well a option outline in [Azure's cloud adoption framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/management-application-environments).
-- Provision one "shared" subscription for resources that are shared between development environments. Which has its own issues, like VNets between App Services and not-shared resources. 
+Another options would be to use **multiple App Service resources**, which could be part of different resource groups or even subscription. 
+- App Service resource in **multiple subscriptions** would require multiple App Service plans and could possible introduce other architectural challenges for example with networking, resource moving or your IAM setup.
+- App Service resource in **multiple resource groups** would be easier to manage, as they can still run on the same App Service plan and inside the same subscription boundaries. Nevertheless you would loose the opportunity to swap slots.
 
-As multiple subscriptions, one for each environment, and one for shared resources implies higher complexity, because it makes networking or roles&rights setup harder, I tend to recommend a one subscription set, utilizing App Service deployment slots.
+## Deployment
 
-## Deployment with Deployment Slots 
+While you might be able to solve the challenges coming with multiple subscriptions or find a viable setup with multiple resource groups. These is one thing, you will not find an easy solution for: The missing swap slot feature. It is the most critical feature you wouldn't want to loose.
 
-Nevertheless deployment slots are a important feature for your App Service, even if they are not used across subscriptions. Mainly because of their zero downtime functionality.
+### Kudu deployments
 
-## Kudu deployments
+Without the swap slot feature, you need to rely on Kudu deployment. [Kudu](https://learn.microsoft.com/en-us/azure/app-service/resources-kudu) is the deployment engine behind App Service container deployment, which is used as soon as a container registry and image tag is set at an App Service. It pulls the container image, starts a new container, and throws the old container away, as soon as the new one starts.
 
-Another App Service specific issues comes into play, when discussing zero downtime deployments - [Kudu](https://learn.microsoft.com/en-us/azure/app-service/resources-kudu). Kudu is the deployment engine behind App Service container deployment, which is used as soon as a container registry and image tag is set at an App Service. It pulls the container image, starts a new container, and throws the old container away, as soon as the new one starts.
+In a setup where multiple App Service resources are used, either across resource groups or subscriptions, this deployment method is the only option to deploy. The processes would look like:
 
-In a setup where multiple App Service resources are used across multiple subscription, this deployment method would be the alternative to deployment slot swaps. The processes would look like:
+`Kudu deploy new container to main slot -> publicly available`
 
-1. Deployment Slot deployment
+compared to a deployment slot deployment:
 
-Kudu Deploy new container to preview slot -> test -> swap to main slot -> publicly available
+`Kudu deploy new container to preview slot -> preview slot is tested -> preview slot container is swapped to main slot -> publicly available`
 
-2. Kudu Deployment
+The issue with the Kudu deployment is, that it is **not entirely zero downtime**. While in most cases, especially when the App Service is running on multiple instances, Kudu manages to shut down and start new containers on the different instances one after another - which keep the application practically without downtime - it comes with some caveats:
 
-Kudu deploy new container to main slot -> publicly available
+- **Transient downtime**: Some users might experience issues, when interacting with one of the instances that is shut down in the deployment process. As they loose their session and are redirected to the other instance. It is also possible to have different versions on different instances which might cause issues for the users.
+- **Scaling**: In the moment of the containers is updated by Kudu, it is not available. This basically reduces the capacity of the application, shifting more load to the other instances.
 
-The issue with the Kudu deployment is, that it is not entirely zero downtime. While in most cases, when the App Service is running on multiple instances, Kudu manages to shut down and start new container version on the different instances one after another - which keep the deployment practically zero downtime. But with some caveats.
+You might understand why the kudu deployments are not labeled as zero downtime by Azure, and why they should not be used for high professional production workloads. Nevertheless it is always a decision depending on our specific use case.
 
-- Transient downtime: Some users might experience issues, when interacting with one the instances that is shut down. as they loose their session and are redicrected to the other instance.
-- Scaling :In the moment of the containers is updated by Kudu, it is not available. This basically reduces the capacity of the application, shifting more load to the other instances.
+### Sideeffects of Deployment Slots
 
-You might understand why the kudu deployments are not labeled as zero downtime by Azure, and why they should not be used for professional production workload. 
+There is one other method to enable zero downtime deployments with multiple App Service resources in multiple resource groups or subscriptions: Using deployment slots for each of the resources.
 
-This does also effect the overall setup of an App Service runtime. You basically need a deployment slot just to guarantee zero downtime deployments, even if they are not used for development environments.
+This option is probably the one you must choose if you company has specific requirements for resource allocation in environment subscription or if you want to follow Microsoft's cloud adoption framework.
 
-### Zero Downtime deployments
+This option depends strongly on your individual case, often it is fairly simple. But some cases come with pretty remarkable **sideeffects**. 
 
-The idea of blue-green deployments often comes with a solution for zero downtime deployments by default. A zero downtime deployment is basically the idea to run two version of the same container side-by-side, before switching the routing of your load balancer from the currently productive container to the newer instances. This avoids a downtime while the deployment is happening. 
+#### Two Environments
+Image you are create two applications running in the same environment. If you are using REST HTTP calls and a simple database, this is not an issue. Load balancing will pass each request to only on the the applications or instances running. And the database will prevent parallel write operations by default. You are probably fine to have two apps side-by-side.
 
-While an App Service setup with multiple container version running in multiple App Service resources across multiple subscriptions offers the possibility to test new containers on one of the environments. A real blue-green deployment can only be used with the option to zero downtime deployment, and includes the option for a rollback as well.
+But be aware: If you would want to use the deployment slot as another testing environment now, for example with different databases. You are essentially creating another, new environment besides the one already existing. Which introduces even more complexity and fiddeling around with the setup and resources.
 
-In a setup where one App Service resource is used in Azure for all development environments, this is not an issue. But in setup with multiple App Service resources, you are required to basically duplicate each development environment again, to provide the zero downtime deployment option for your services - a bit redundant.
+#### Async Communication
+Another problematic point are async events: Image there is one event consumed by your app, that causes your app to write a new user to your database. 
 
-## Sideeffects of Deployment Slots
+Your environment has one message broker that sends events, which is consumed by your main and deployment slot, in the same environment. You are probably coming to a point where the deployment slot "steals" the event from the message broker and writes the user to its database, not the one of the main slot. 
 
-### Async Communication and other side effects
+Another issue could be, the deployment slots processes the event in another way than expected because it is running another code version than the main slot.
 
-## Instances and technical requirements
-- Container must work on each env
-- Set env variables in App Services (With key vaults)
-- Have all services in each environment 
-...
+These sideeffects are nothing that a develop could not solve, but they are introduction another layer of complexity someone must handle. Which is often really hard to get for application developers that do not want to understand the infrastructure to much. 
+
+## Wrap up
 
 
-## Where to set up environments?
-
-Subscriptions? Resource Groups? 
-
-Where are other parts of the system running? 
-
-How separated must your environemnts be? 
-
-multiple Ap pServices in one environments? (Stages in Stages)
-
-## Implications 
-
-(Benefits of the setup / Drawbacks)
-
-- automated swaps between environemtns
-
-## The perfect setup
-
-After pointing at all the possible issues coming with different App Service setups, I want to outline the perfekt App Service setup:
-
-- One subscription
-- A shared Resource Group
-- One Resource Group per development envrionment
-- Shared resources (Key Vault, Database server ...)
-- Environment resources (Database, Key Vault, ..)
 
 
 
