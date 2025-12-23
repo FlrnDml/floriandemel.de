@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface TypewriterEffectProps {
   phrases: string[];
@@ -19,12 +19,12 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   const [isDeleting, setIsDeleting] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isWaiting, setIsWaiting] = useState(false);
-  
+
   useEffect(() => {
     if (phrases.length === 0) return;
-    
+
     let timer: NodeJS.Timeout;
-    
+
     if (isWaiting) {
       timer = setTimeout(() => {
         setIsWaiting(false);
@@ -32,9 +32,9 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
       }, delayBetweenPhrases);
       return () => clearTimeout(timer);
     }
-    
+
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (isDeleting) {
       if (text.length === 0) {
         setIsDeleting(false);
@@ -53,10 +53,10 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
         }, typingSpeed);
       }
     }
-    
+
     return () => clearTimeout(timer);
   }, [text, isDeleting, phraseIndex, isWaiting, phrases, typingSpeed, deletingSpeed, delayBetweenPhrases]);
-  
+
   return (
     <div className={`typewriter ${className}`}>
       <span>{text}</span>

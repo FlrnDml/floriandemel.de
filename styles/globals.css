@@ -7,7 +7,6 @@
   --card-bg: #f0f0f0; /* Updated to white-grey */
   --border-color: #e0e0e0;
   --hover-color: #e8e8e8;
-  --badge-bg: rgba(36, 102, 87, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.08);
   --background-color: rgba(192, 192, 192, 0.9); /* More transparent overlay */
   --accent-light-transparent: rgba(56, 142, 122, 0.1);
@@ -116,10 +115,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.card-categories {
-  margin-top: auto;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row on large screens */
@@ -203,18 +198,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .book-description {
   margin-top: 0;
-}
-
-.badge {
-  display: inline-block;
-  background-color: var(--badge-bg);
-  color: var(--accent-teal);
-  border-radius: 4px;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  border: 1px solid rgba(36, 102, 87, 0.3);
 }
 
 .social-links {

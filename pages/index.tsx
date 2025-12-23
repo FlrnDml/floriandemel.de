@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaDownload } from 'react-icons/fa'
@@ -9,9 +8,9 @@ import TypewriterEffect from '../components/TypewriterEffect'
 
 const Home: NextPage = () => {
   const descriptions = [
-    "Platform Engineer specializing in cloud computing, software architecture, and fullstack development.",
-    "Building scalable cloud infrastructure with automation at its core.",
-    "Creating resilient software systems with maintainability in mind.",
+    "Platform Engineer specializing in cloud computing & software architecture.",
+    "Building well designed systems.",
+    "Creating resilient software with maintainability in mind.",
     "Implementing efficient delivery pipelines and robust DevOps practices.",
     "Would love to hear from you!"
   ];
@@ -22,27 +21,27 @@ const Home: NextPage = () => {
         {/* Streamlined Header Section with enhanced circular profile picture */}
         <header className="hero-section">
           <div className="profile-image-container">
-            <Image 
-              src="/static/profile.jpeg" 
-              alt="Florian Demel" 
+            <Image
+              src="/static/profile.jpeg"
+              alt="Florian Demel"
               fill
               sizes="(max-width: 480px) 100px, (max-width: 768px) 120px, 150px"
               className="profile-image"
               loading="eager"
-              style={{objectFit: "cover"}}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className="hero-content">
             <h1>Florian Demel</h1>
-            <TypewriterEffect 
-              phrases={descriptions} 
-              className="hero-subtitle" 
+            <TypewriterEffect
+              phrases={descriptions}
+              className="hero-subtitle"
               typingSpeed={40}
               deletingSpeed={20}
               delayBetweenPhrases={3000}
             />
           </div>
-          
+
           {/* Contact Section at top */}
           <div className="contact-bar">
             <a href="mailto:kontakt@floriandemel.de" className="contact-item">
@@ -59,34 +58,32 @@ const Home: NextPage = () => {
             </a>
           </div>
         </header>
-        
+
         <Section title="More About Me">
           <div className="grid">
-            <Card 
-              title="Scientific Work" 
-              categories={["Automatic Speech Recognition", "AI", "Open Source"]}
+            <Card
+              title="Scientific Work"
+              text="Contributor to Melvin ASR, a scientific approach to Automatic Speech Recognition. Project developed as part of university research combining artificial intelligence and voice technology."
             >
-              <p>Contributor to Melvin ASR, a scientific approach to Automatic Speech Recognition. Project developed as part of university research combining artificial intelligence and voice technology.</p>
               <div className="card-action">
                 <a href="https://github.com/shuffle-project/melvin-asr" className="button button-small" target="_blank" rel="noopener noreferrer">
-                  <FaCode style={{marginRight: '0.5rem'}} /> View Repository
+                  <FaCode style={{ marginRight: '0.5rem' }} /> View Repository
                 </a>
               </div>
             </Card>
-            
-            <Card 
-              title="Paper Publication" 
-              categories={["Research", "Computer Science"]}
+
+            <Card
+              title="Paper Publication"
+              text="Published research on software maintainability metrics derived from my master's thesis. Explores innovative approaches to measuring and improving system maintainability through theory-driven metrics."
             >
-              <p>Published research on software maintainability metrics derived from my master's thesis. Explores innovative approaches to measuring and improving system maintainability through theory-driven metrics.</p>
               <div className="card-action">
-                <a 
+                <a
                   href="https://github.com/FlrnDml/floriandemel.de/blob/f6b9944ac48f5c2abf4fac6013b0ccdbb835b638/Case-Study-Measuring-Maintainability_Florian%20Demel.pdf"
                   className="button button-small"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaDownload style={{marginRight: '0.5rem'}} /> View Paper
+                  <FaDownload style={{ marginRight: '0.5rem' }} /> View Paper
                 </a>
               </div>
             </Card>
