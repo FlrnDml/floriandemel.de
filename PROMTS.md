@@ -9,7 +9,8 @@ Afterwards give me clear ideas what to improve. Make these ideas structured (e.g
 Only print one list with all issues! Mention what I need to change in each place.
 Only change my text if I explicitly ask you to do so.
 
-# Criteria 
+# Criteria
+
 The following criteria are important for me.
 
 ## Tone & Writing Style
@@ -57,8 +58,9 @@ Please evaluate my blog post against the following criteria and provide structur
 
 - Warp up: Make sure at the end is a very short Wrap up, summing the hole post up and outlining the results for the reader.
 - About me: Make sure there is a about me section at the end linking to my X.com and explaining who I am. Like:
-    ```md
-    My name is Florian, I am a platform engineer who wants to share his dev experience with you, hoping it makes us all a bit smarter. Please let me know what you think about my post!
 
-    In case you want to see more of my posts, you can also find me on [X.com](https://x.com/FlrnDml), where I share all of my content + daily dev news.
-    ```
+  ```md
+  My name is Florian, I am a platform engineer who wants to share his dev experience with you, hoping it makes us all a bit smarter. Please let me know what you think about my post!
+
+  In case you want to see more of my posts, you can also find me on [X.com](https://x.com/FlrnDml), where I share all of my content.
+  ```
