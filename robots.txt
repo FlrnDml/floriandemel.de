@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://floriandemel.de
+
+# Sitemaps
+Sitemap: https://floriandemel.de/sitemap.xml
