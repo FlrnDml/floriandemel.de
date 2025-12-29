@@ -87,6 +87,10 @@ async function deploy() {
     // Step 2: Build the Next.js application
     console.log('\n🏗️  Building Next.js application...');
     executeCommand('next build');
+
+    // Step 2.1: Generate Sitemap
+    console.log('\n🗺️  Generating Sitemap...');
+    executeCommand('npx next-sitemap');
     
     // Make sure the output directory exists
     if (!existsSync(OUTPUT_DIR)) {

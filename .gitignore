@@ -27,3 +27,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Gemini AI
+GEMINI.md
+.geminiignore

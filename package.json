@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
     "deploy": "node ./scripts/deploy.mjs"
   },
   "engines": {
@@ -11,6 +13,7 @@
   },
   "dependencies": {
     "next": "^15.2.0",
+    "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0"

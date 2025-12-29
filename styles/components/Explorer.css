@@ -1,0 +1,78 @@
+.explorer {
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.explorer-header {
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.explorer-section {
+  padding: 0.5rem 0;
+}
+
+.explorer-item {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.explorer-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.explorer-item.file {
+  padding-left: 2rem;
+}
+
+.explorer-item.folder-sub {
+  padding-left: 1rem;
+}
+
+.explorer-tree-sub .explorer-item.file {
+  padding-left: 3rem;
+}
+
+.explorer-item .icon {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.explorer-item .home-icon {
+  color: var(--accent-blue);
+}
+
+.explorer-item .code-icon {
+  color: var(--accent-magenta);
+}
+
+.explorer-item .pdf-icon {
+  color: var(--accent-cyan);
+}
+
+.explorer-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .explorer {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+}

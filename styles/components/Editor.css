@@ -1,0 +1,65 @@
+.editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+.editor-header {
+  height: 35px;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg);
+}
+
+.tab.active {
+  background-color: var(--background-color);
+  color: var(--accent-blue);
+}
+
+.editor-content {
+  flex-grow: 1;
+  padding: 3rem;
+  overflow-y: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.editor-buffer h1 {
+  font-size: 2.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 2rem;
+}
+
+.editor-buffer p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .editor-content {
+    padding: 1.5rem;
+  }
+
+  .editor-buffer h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .editor-buffer p {
+    font-size: 1rem;
+  }
+}
