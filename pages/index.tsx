@@ -4,7 +4,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaTwitter,
 } from "react-icons/fa";
 import TypewriterEffect from "../components/TypewriterEffect";
 
@@ -63,15 +62,7 @@ const Home: NextPage = () => {
             <FaGithub className="contact-icon-small" />
             <span className="contact-label">GitHub</span>
           </a>
-          <a
-            href="https://x.com/FlrnDml"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-item"
-          >
-            <FaTwitter className="contact-icon-small" />
-            <span className="contact-label">X</span>
-          </a>
+
         </div>
       </header>
     </div>

@@ -264,6 +264,28 @@ const Datenschutz: NextPage = () => {
           insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
         </p>
       </Section>
+
+      <Section title="4. Analyse-Tools und Werbung">
+        <h3>Umami</h3>
+        <p>
+          Diese Website nutzt Umami, ein Open-Source-Webanalyse-Tool. Umami
+          verwendet keine Cookies und speichert keine personenbezogenen Daten.
+          Die IP-Adressen der Besucher werden anonymisiert. Es findet kein
+          Tracking über verschiedene Websites hinweg statt (kein
+          Cross-Site-Tracking). Die Daten werden auf Servern in der EU
+          gespeichert.
+        </p>
+        <p>
+          Weitere Informationen zum Datenschutz bei Umami finden Sie unter:{" "}
+          <a
+            href="https://umami.is/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://umami.is/privacy
+          </a>
+        </p>
+      </Section>
     </div>
   );
 };

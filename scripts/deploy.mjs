@@ -38,7 +38,7 @@ const deployOptions = {
  */
 function executeCommand(command, options = {}) {
   console.log(`Executing: ${command}`);
-  
+
   try {
     return execSync(command, {
       cwd: ROOT_DIR,
@@ -75,13 +75,12 @@ async function createFile(path, content = '') {
 async function deploy() {
   try {
     console.log('=== 🚀 Starting deployment process ===');
-    
+
     // Step 1: Check if Git repository is clean
     console.log('\n📋 Checking Git status...');
     const statusOutput = executeCommand('git status --porcelain');
     if (statusOutput) {
-      console.warn('⚠️  Warning: Git repository has uncommitted changes.');
-      console.warn('These changes won\'t be included in the deployment.');
+      console.warn('⚠️  Warning: Git repository has uncommitted changes, please commit them before deploying.');
     }
 
     // Step 2: Build the Next.js application
@@ -91,22 +90,22 @@ async function deploy() {
     // Step 2.1: Generate Sitemap
     console.log('\n🗺️  Generating Sitemap...');
     executeCommand('npx next-sitemap');
-    
+
     // Make sure the output directory exists
     if (!existsSync(OUTPUT_DIR)) {
       console.error('❌ Build output directory not found. Build may have failed.');
       process.exit(1);
     }
-    
+
     // Step 3: Create required GitHub Pages files
     console.log('\n📝 Creating GitHub Pages specific files...');
-    
+
     // Create .nojekyll file to disable Jekyll processing
     await createFile(join(OUTPUT_DIR, '.nojekyll'));
-    
+
     // Create CNAME file for custom domain
     await createFile(join(OUTPUT_DIR, 'CNAME'), CNAME_VALUE);
-    
+
     // Step 4: Deploy to GitHub Pages
     console.log('\n🚀 Deploying to GitHub Pages...');
     await new Promise((resolve, reject) => {
@@ -118,10 +117,10 @@ async function deploy() {
         }
       });
     });
-    
+
     console.log('\n✅ Successfully deployed to GitHub Pages!');
     console.log(`🌐 Your site should be available at https://${CNAME_VALUE} shortly.`);
-    
+
   } catch (error) {
     console.error('\n❌ Deployment failed:', error);
     process.exit(1);

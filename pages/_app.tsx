@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import Explorer from "../components/Explorer";
 import Editor from "../components/Editor";
 import Footer from "../components/Footer";
@@ -20,6 +21,7 @@ import "../styles/components/TypewriterEffect.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="44f3247d-3c4f-4f77-a8f3-696aa0ec59b8"></script>
       <SEO />
       <Head>
         <link rel="icon" href="/favicon.ico" />
