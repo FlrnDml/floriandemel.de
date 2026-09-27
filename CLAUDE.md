@@ -53,8 +53,8 @@ Many visitors come from LinkedIn on a phone. Every change must work on both.
 
 - Every page sets a unique title and description through `<SEO>` (keyed meta tags
   override the defaults from `_app.tsx`). Articles use `type="article"`.
-- Canonical URLs point to `https://floriandemel.de/...`. Cross-posts on dev.to and
-  Medium must set their canonical URL to the article on this site.
+- Canonical URLs point to `https://floriandemel.de/...`. This site is the only place
+  the articles are published.
 - Post frontmatter `description` is the meta description: 1–2 sentences, under ~160 characters.
 - Semantic HTML: one `<h1>` per page, headings in order, `<article>`, `<time dateTime>`.
 - Keep slugs short, lowercase, hyphenated, and stable. Changing a slug breaks links.
@@ -76,7 +76,11 @@ than guessing; the owner is responsible for the final legal check.
   and Umami (analytics, cookieless). Update it whenever a service is added or removed,
   and update the "Stand" date.
 - Do not add anything that needs a cookie banner (tracking cookies, embedded YouTube,
-  Google Fonts from Google servers, social media widgets). Link out instead.
+  social media widgets). Link out instead.
+- Never load Google Fonts (or any font/CDN) from third-party servers. Embedding
+  Google Fonts transfers the visitor's IP to Google without consent; German courts
+  have awarded damages for it (LG München I, 3 O 17493/20). Fonts come from npm
+  packages or local files via `next/font` only.
 - No third-party requests without a legal basis: self-host fonts and assets.
 - No advertising, affiliate links or sponsored content without clear labeling.
 - Only publish images and texts the owner has the rights to.
