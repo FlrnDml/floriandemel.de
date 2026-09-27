@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         </div>
       </section>
 
-      <h2 className="section-title">Writing</h2>
+      <h2 className="section-title">Blog</h2>
       <ul className="post-list">
         {posts.map((post) => (
           <li key={post.slug}>

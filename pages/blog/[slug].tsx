@@ -17,7 +17,7 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
       />
 
       <Link href="/" className="back">
-        ← Florian Demel
+        ← back
       </Link>
 
       <header className="post-header">

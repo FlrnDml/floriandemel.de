@@ -3,14 +3,8 @@ title: "Why do you need a Tech Lead in a corporate software development environm
 date: 2026-09-27
 description: "The three main tasks of a Tech Lead in a corporate team: keep the feature pipeline rolling, build a technical vision and be the glue."
 tags: [process, leadership]
-draft: false
+draft: true
 ---
-
-## Target reader
-
-A software dev that wonders why there is a Tech Lead on their team now
-
-## Intro
 
 In each software development team there are many discussion about the roles, the development process and the application of frameworks like Scrum in the day-to-day work. I guess anyone probably had these discussions in their team before.
 

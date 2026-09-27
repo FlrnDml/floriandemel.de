@@ -71,14 +71,6 @@ The posts follow the "Cs": Clarity, Conciseness, Coherence and Correctness/Credi
 - Transitions (however, therefore, in addition, for example) connect ideas.
 - **End:** a very short **Wrap up** that sums up the whole post and outlines the result
   for the reader.
-- **About me:** the post ends with an about-me section that explains who Florian is
-  and links to X.com, like:
-
-  ```md
-  My name is Florian, I am a platform engineer who wants to share his dev experience with you, hoping it makes us all a bit smarter. Please let me know what you think about my post!
-
-  In case you want to see more of my posts, you can also find me on [X.com](https://x.com/FlrnDml), where I share all of my content.
-  ```
 
 ### 5. Content depth and reasoning
 
