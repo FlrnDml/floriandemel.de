@@ -18,10 +18,17 @@ const ROOT_DIR = join(__dirname, '..');
 const OUTPUT_DIR = join(ROOT_DIR, 'out');
 const CNAME_VALUE = 'floriandemel.de'; // Set your domain here
 
+// In GitHub Actions, gh-pages pushes from its own clone, which does not inherit the
+// credentials of actions/checkout. Pass the token explicitly in the repository URL.
+const { GITHUB_TOKEN, GITHUB_REPOSITORY } = process.env;
+const REPO_URL = GITHUB_TOKEN && GITHUB_REPOSITORY
+  ? `https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git`
+  : undefined; // Locally: use the current repository's URL from git config
+
 // GitHub Pages deployment options
 const deployOptions = {
   branch: 'gh-pages',
-  repo: undefined, // Uses the current repository's URL from git config
+  repo: REPO_URL,
   message: `Automated deployment [${new Date().toISOString()}]`,
   dotfiles: true, // Include files like .nojekyll
   user: {
