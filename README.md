@@ -18,7 +18,7 @@ Velite automatically.
 
 ### Prerequisites
 
-- Node.js (v20.16)
+- Node.js 24 (LTS, see `.nvmrc`)
 - NPM
 
 ### Setup
