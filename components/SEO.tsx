@@ -16,7 +16,8 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const router = useRouter();
   const siteUrl = "https://floriandemel.de";
-  const canonicalUrl = `${siteUrl}${router.asPath === "/" ? "" : router.asPath}`;
+  const path = router.asPath.split(/[?#]/)[0];
+  const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
   const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 
   return (
