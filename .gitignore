@@ -28,10 +28,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Gemini AI
-/GEMINI.md
-.geminiignore
-
 # velite (generated content)
 /.velite
 /public/blog-assets
