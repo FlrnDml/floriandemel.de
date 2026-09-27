@@ -1,6 +1,6 @@
 # Redesign sketch: profile + blog in one repo
 
-Status: idea collection. No code changes yet beyond removing the project pages.
+Status: implemented in PR #1 (Geist font, blog merged into `content/`, Velite). Kept as design notes.
 
 ## 1. Goals
 

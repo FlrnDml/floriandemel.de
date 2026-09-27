@@ -4,7 +4,7 @@ import Section from "../components/Section";
 
 const Datenschutz: NextPage = () => {
   return (
-    <div className="editor-buffer">
+    <div className="page">
       <Head>
         <title>Datenschutzerklärung | Florian Demel</title>
         <meta

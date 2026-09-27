@@ -1,4 +1,9 @@
-# How to Dockerize a Next.js App (2025)
+---
+title: "How to Dockerize a Next.js App (2025)"
+date: 2025-11-29
+description: "Our findings from building a Docker setup for a Next.js app in an Nx monorepo."
+tags: [nextjs, docker]
+---
 
 ## Introduction
 

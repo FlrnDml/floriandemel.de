@@ -29,5 +29,10 @@ yarn-error.log*
 .vercel
 
 # Gemini AI
-GEMINI.md
+/GEMINI.md
 .geminiignore
+
+# velite (generated content)
+/.velite
+/public/blog-assets
+*.tsbuildinfo

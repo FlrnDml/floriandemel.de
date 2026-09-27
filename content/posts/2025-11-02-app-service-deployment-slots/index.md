@@ -1,4 +1,9 @@
-# How to use App Service Deployment Slots (with containers)
+---
+title: "How to use App Service Deployment Slots (with containers)"
+date: 2025-11-02
+description: "Architectural decisions for zero-downtime deployments with Azure App Service deployment slots."
+tags: [azure]
+---
 
 ## TLDR
 

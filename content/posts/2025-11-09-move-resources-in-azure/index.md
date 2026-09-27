@@ -1,4 +1,9 @@
-# How to move resources between subscriptions in Azure
+---
+title: "How to move resources between subscriptions in Azure"
+date: 2025-11-09
+description: "What to watch out for when moving Azure resources, and when recreating them is faster."
+tags: [azure, iac]
+---
 
 ## TL;DR
 Moving resources in Azure is a powerful capability, but it's not easy. The official documentation can be a maze, making it impossible to plan with all different requirements. The biggest watch-out is for your Infrastructure as Code state, as resource ID changes will break it, requiring manual state fixes. The practical path forward is often a hybrid one: move the truly irreplaceable resources, but don't be afraid to recreate everything else. It might just be faster.

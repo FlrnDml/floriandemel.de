@@ -4,7 +4,10 @@ Personal website for Florian Demel.
 
 ## Overview
 
-This repository contains the source code for [floriandemel.de](https://floriandemel.de), a personal website with a short profile and professional information.
+This repository contains the source code for [floriandemel.de](https://floriandemel.de), a personal website with a short profile and my blog.
+
+Blog posts live in [`content/posts`](content/README.md) and are turned into typed data by
+[Velite](https://velite.js.org) at build time.
 
 ## Development
 
@@ -27,3 +30,6 @@ npm install
 
 # Start the development server
 npm run dev
+```
+
+See [content/README.md](content/README.md) for how to write a new post.

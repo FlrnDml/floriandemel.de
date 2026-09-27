@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "predev": "velite build",
+    "dev": "velite dev & next dev",
+    "prebuild": "velite build",
     "build": "next build",
     "postbuild": "next-sitemap",
     "deploy": "node ./scripts/deploy.mjs"
@@ -12,11 +14,11 @@
     "node": "20.16"
   },
   "dependencies": {
+    "geist": "^1.7.2",
     "next": "^15.2.0",
     "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
@@ -24,6 +26,7 @@
     "eslint": "^8.56.0",
     "eslint-config-next": "^13.4.19",
     "gh-pages": "^6.3.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "velite": "^0.4.0"
   }
 }

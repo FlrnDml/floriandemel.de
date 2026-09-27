@@ -22,25 +22,25 @@ const SEO: React.FC<SEOProps> = ({
   return (
     <Head>
       <title>{title}</title>
-      <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta key="description" name="description" content={description} />
+      <link key="canonical" rel="canonical" href={canonicalUrl} />
+      <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
 
       {/* Open Graph */}
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Florian Demel" />
+      <meta key="og:url" property="og:url" content={canonicalUrl} />
+      <meta key="og:title" property="og:title" content={title} />
+      <meta key="og:description" property="og:description" content={description} />
+      <meta key="og:image" property="og:image" content={imageUrl} />
+      <meta key="og:type" property="og:type" content={type} />
+      <meta key="og:site_name" property="og:site_name" content="Florian Demel" />
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@FlrnDml" />
-      <meta name="twitter:creator" content="@FlrnDml" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
+      <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+      <meta key="twitter:site" name="twitter:site" content="@FlrnDml" />
+      <meta key="twitter:creator" name="twitter:creator" content="@FlrnDml" />
+      <meta key="twitter:title" name="twitter:title" content={title} />
+      <meta key="twitter:description" name="twitter:description" content={description} />
+      <meta key="twitter:image" name="twitter:image" content={imageUrl} />
     </Head>
   );
 };

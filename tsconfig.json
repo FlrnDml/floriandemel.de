@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "#site/content": ["./.velite"]
     },
     "incremental": true
   },

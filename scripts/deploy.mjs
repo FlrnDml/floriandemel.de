@@ -85,7 +85,8 @@ async function deploy() {
 
     // Step 2: Build the Next.js application
     console.log('\n🏗️  Building Next.js application...');
-    executeCommand('next build');
+    executeCommand('npx velite build');
+    executeCommand('npx next build');
 
     // Step 2.1: Generate Sitemap
     console.log('\n🗺️  Generating Sitemap...');

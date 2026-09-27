@@ -4,7 +4,7 @@ import Section from "../components/Section";
 
 const Impressum: NextPage = () => {
   return (
-    <div className="editor-buffer">
+    <div className="page">
       <Head>
         <title>Impressum | Florian Demel</title>
         <meta

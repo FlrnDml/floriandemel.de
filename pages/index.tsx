@@ -1,72 +1,64 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa";
-import TypewriterEffect from "../components/TypewriterEffect";
+import type { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
+import { formatDate, getPosts, type PostSummary } from "../lib/posts";
 
-const Home: NextPage = () => {
-  const descriptions = [
-    "Platform Engineer specializing in cloud computing.",
-    "Building resilient software with maintainability in mind.",
-    "Creating well designed systems.",
-    "Implementing efficient delivery pipelines.",
-    "DevOps Enthusiast & Neovim User.",
-  ];
+interface HomeProps {
+  posts: PostSummary[];
+}
 
+const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
-    <div className="dashboard">
-      <header className="hero-section">
-        <div className="profile-image-container">
-          <Image
-            src="/static/profile.jpeg"
-            alt="Florian Demel"
-            fill
-            className="profile-image"
-            priority
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <div className="hero-content">
-          <h1>Florian Demel</h1>
-          <TypewriterEffect
-            phrases={descriptions}
-            typingSpeed={40}
-            deletingSpeed={20}
-            delayBetweenPhrases={3000}
-          />
-        </div>
-
-        <div className="contact-bar">
-          <a href="mailto:kontakt@floriandemel.de" className="contact-item">
-            <FaEnvelope className="contact-icon-small" />
-            <span className="contact-label">Email</span>
-          </a>
+    <>
+      <section className="profile">
+        <h1>Florian Demel</h1>
+        <p>
+          Platform Engineer specializing in cloud computing. I build resilient,
+          maintainable systems and efficient delivery pipelines, and write
+          about Azure, architecture and everything DevOps.
+        </p>
+        <div className="links">
+          <a href="mailto:kontakt@floriandemel.de">Email</a>
           <a
             href="https://www.linkedin.com/in/florian-demel-b11254236/"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-item"
           >
-            <FaLinkedin className="contact-icon-small" />
-            <span className="contact-label">LinkedIn</span>
+            LinkedIn
           </a>
           <a
             href="https://github.com/FlrnDml"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-item"
           >
-            <FaGithub className="contact-icon-small" />
-            <span className="contact-label">GitHub</span>
+            GitHub
           </a>
-
         </div>
-      </header>
-    </div>
+      </section>
+
+      <h2 className="section-title">Writing</h2>
+      <ul className="post-list">
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link href={`/blog/${post.slug}`}>
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
+              <span className="post-title">{post.title}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => ({
+  props: {
+    posts: getPosts().map(({ slug, title, date, description }) => ({
+      slug,
+      title,
+      date,
+      description,
+    })),
+  },
+});
 
 export default Home;

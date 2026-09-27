@@ -1,4 +1,10 @@
-# How to Pass AZ-104 or Any Other Azure Certificate
+---
+title: "How to Pass AZ-104 or Any Other Azure Certificate"
+date: 2025-10-26
+description: "A pattern-based approach to preparing for Azure certification exams like the AZ-104."
+tags: [azure, certification]
+---
+
 ## TL;DR
 Preparing for an Azure certification like the AZ-104 is not about memorizing everything - it is about understanding patterns in the questions and topics. In this post, I will tell my experience about Azure exam preparation, so you know how to approach your own certification journey.
 
