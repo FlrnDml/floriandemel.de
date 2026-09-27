@@ -3,6 +3,26 @@
 Personal website and blog of Florian Demel: https://floriandemel.de
 A short profile followed by blog articles about software, architecture and Azure.
 
+## This repository is public
+
+The entire repository, including its full git history, is public on GitHub. Treat every
+file, commit message, branch name and PR text as published to the internet.
+
+- **No secrets:** no API keys, tokens, passwords, connection strings or private URLs.
+  Values that must stay private go into GitHub secrets or local `.env*.local` files
+  (ignored by git). Public IDs that ship to the browser anyway (e.g. the Umami website ID)
+  are fine.
+- **No personal data** beyond what the site already shows publicly (no private
+  address, phone number or employer-internal information).
+- **Nothing that looks bad in public:** no comments or notes that suggest illegal
+  actions, license or copyright violations, or anything that could embarrass the owner
+  or their employer.
+- **No unfinished work:** no `TODO`, `FIXME`, commented-out code, debug output or
+  placeholder text in committed code. Finish it or leave it out.
+- Commit messages are clear and professional.
+- Anything committed stays in the history even after deletion. If a secret is ever
+  committed, treat it as leaked: revoke it first, then clean up.
+
 ## Stack
 
 - Next.js 15 (pages router), static export (`output: 'export'`), hosted on GitHub Pages
