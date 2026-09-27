@@ -32,3 +32,6 @@ yarn-error.log*
 /.velite
 /public/blog-assets
 *.tsbuildinfo
+
+# local tools
+/lazygit

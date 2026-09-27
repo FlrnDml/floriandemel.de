@@ -5,7 +5,7 @@ Everything the website shows from Markdown lives here.
 ```
 content/
 ├── posts/     published on floriandemel.de/blog/<slug>
-└── notes/     private notes (ideas, process, values, prompts), never published
+└── notes/     private notes (values, prompts), never published
 ```
 
 Only `content/posts/*/index.md` is read by the website (see `velite.config.ts`).
