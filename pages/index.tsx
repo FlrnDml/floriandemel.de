@@ -13,8 +13,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <h1>Florian Demel</h1>
         <p>
           Tech Lead at STIHL in Waiblingen, building full-stack software
-          systems on Azure. Here I write about my experience with software,
-          architecture and Azure.
+          systems on Azure.
         </p>
         <div className="links">
           <a href="mailto:kontakt@floriandemel.de">Email</a>
