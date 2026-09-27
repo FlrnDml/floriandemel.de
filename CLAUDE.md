@@ -90,5 +90,7 @@ than guessing; the owner is responsible for the final legal check.
 
 - Posts are hand-written by the owner (see `content/notes/VALUES.md`). Do not
   generate or rewrite article text unless explicitly asked; review and fixes are fine.
+- To review a post, use the `/review-blog-post` skill (`.claude/skills/review-blog-post`).
+  It only returns a numbered list of ideas and never edits the post.
 - New posts start with `draft: true`. Drafts are only visible in `npm run dev`.
 - Never publish or link anything from `content/notes/`.
