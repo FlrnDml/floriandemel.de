@@ -6,8 +6,13 @@ Personal website for Florian Demel.
 
 This repository contains the source code for [floriandemel.de](https://floriandemel.de), a personal website with a short profile and my blog.
 
-Blog posts live in [`content/posts`](content/README.md) and are turned into typed data by
-[Velite](https://velite.js.org) at build time.
+## Content with Velite
+
+Blog posts are Markdown files in [`content/posts`](content/README.md).
+[Velite](https://velite.js.org) (`velite.config.ts`) reads them at build time, checks the
+frontmatter against a schema, converts the Markdown to HTML and writes typed data to
+`.velite/`. Pages import it via `#site/content`. `npm run dev` and `npm run build` run
+Velite automatically.
 
 ## Development
 

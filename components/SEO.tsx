@@ -9,8 +9,8 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = "Florian Demel | Platform Engineer",
-  description = "Platform Engineer specializing in cloud computing, software architecture, and fullstack development.",
+  title = "Florian Demel | Tech Lead",
+  description = "Tech Lead at STIHL building full-stack software systems on Azure. Blog about software, architecture and Azure.",
   image = "/static/profile.jpeg",
   type = "website",
 }) => {

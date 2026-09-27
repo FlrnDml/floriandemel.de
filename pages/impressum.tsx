@@ -16,7 +16,7 @@ const Impressum: NextPage = () => {
 
       <h1>Impressum</h1>
 
-      <Section title="Angaben gemäß § 5 TMG">
+      <Section title="Angaben gemäß § 5 DDG">
         <p>Florian Demel</p>
         <p>
           <strong>Hinweis:</strong> Diese Website wird von einer
@@ -34,9 +34,9 @@ const Impressum: NextPage = () => {
 
       <Section title="Haftung für Inhalte">
         <p>
-          Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte
+          Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte
           auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-          Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht
+          Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht
           verpflichtet, übermittelte oder gespeicherte fremde Informationen
           zu überwachen oder nach Umständen zu forschen, die auf eine
           rechtswidrige Tätigkeit hinweisen.

@@ -138,7 +138,7 @@ const Datenschutz: NextPage = () => {
           DSGVO. Sofern Sie in die Speicherung von Cookies oder in den
           Zugriff auf Informationen in Ihr Endgerät (z. B. via
           Device-Fingerprinting) eingewilligt haben, erfolgt die
-          Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TTDSG.
+          Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG.
           Die Einwilligung ist jederzeit widerrufbar.
         </p>
 
@@ -146,8 +146,12 @@ const Datenschutz: NextPage = () => {
           Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten
         </h3>
         <p>
-          Wir verwenden keine Tools von Unternehmen mit Sitz in den USA oder
-          sonstigen datenschutzrechtlich unsicheren Drittstaaten.
+          Diese Website wird bei GitHub Pages gehostet, einem Dienst der
+          GitHub, Inc. mit Sitz in den USA. Dabei können personenbezogene
+          Daten (z. B. Ihre IP-Adresse) in die USA übertragen werden. Die
+          Übermittlung stützt sich auf den Angemessenheitsbeschluss der
+          EU-Kommission zum EU-US Data Privacy Framework, unter dem GitHub
+          zertifiziert ist.
         </p>
 
         <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
@@ -208,9 +212,27 @@ const Datenschutz: NextPage = () => {
       </Section>
 
       <Section title="3. Datenerfassung auf dieser Website">
+        <h3>Hosting</h3>
+        <p>
+          Diese Website wird bei GitHub Pages gehostet. Anbieter ist die
+          GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA
+          94107, USA. Beim Aufruf der Website verarbeitet GitHub die unten
+          genannten Server-Log-Daten, um die Seiten auszuliefern und die
+          Sicherheit des Dienstes zu gewährleisten. Details finden Sie in der
+          Datenschutzerklärung von GitHub:{" "}
+          <a
+            href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub General Privacy Statement
+          </a>
+          .
+        </p>
+
         <h3>Server-Log-Dateien</h3>
         <p>
-          Der Provider der Seiten erhebt und speichert automatisch
+          Der Provider der Seiten (GitHub) erhebt und speichert automatisch
           Informationen in so genannten Server-Log-Dateien, die Ihr Browser
           automatisch an uns übermittelt. Dies sind:
         </p>
@@ -286,6 +308,8 @@ const Datenschutz: NextPage = () => {
           </a>
         </p>
       </Section>
+
+      <p>Stand: September 2026</p>
     </div>
   );
 };

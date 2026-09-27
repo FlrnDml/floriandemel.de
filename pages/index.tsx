@@ -12,9 +12,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <section className="profile">
         <h1>Florian Demel</h1>
         <p>
-          Platform Engineer specializing in cloud computing. I build resilient,
-          maintainable systems and efficient delivery pipelines, and write
-          about Azure, architecture and everything DevOps.
+          Tech Lead at STIHL in Waiblingen, building full-stack software
+          systems on Azure. Here I write about my experience with software,
+          architecture and Azure.
         </p>
         <div className="links">
           <a href="mailto:kontakt@floriandemel.de">Email</a>
