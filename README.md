@@ -4,7 +4,7 @@ Personal website for Florian Demel.
 
 ## Overview
 
-This repository contains the source code for [floriandemel.de](https://floriandemel.de), a personal website/portfolio showcasing projects, blog posts, and professional information.
+This repository contains the source code for [floriandemel.de](https://floriandemel.de), a personal website with a short profile and professional information.
 
 ## Development
 

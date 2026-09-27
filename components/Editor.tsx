@@ -12,10 +12,6 @@ const Editor: React.FC<EditorProps> = ({ children }) => {
     switch (path) {
       case "/":
         return "index.tsx";
-      case "/files/melvin-asr":
-        return "melvin-asr.md";
-      case "/files/maintainability-study":
-        return "maintainability.pdf";
       default:
         return path.split("/").pop() || "buffer";
     }
