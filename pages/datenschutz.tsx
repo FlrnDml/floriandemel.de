@@ -298,6 +298,14 @@ const Datenschutz: NextPage = () => {
           gespeichert.
         </p>
         <p>
+          Erfasst werden neben den Seitenaufrufen nur anonyme
+          Nutzungsereignisse: wie lange eine Seite sichtbar geöffnet war, ob
+          ein Artikel bis zum Ende gelesen wurde und welche Links zu anderen
+          Websites angeklickt wurden. Diese Daten lassen sich keiner Person
+          zuordnen und dienen nur dazu, die Inhalte dieser Website zu
+          verbessern.
+        </p>
+        <p>
           Weitere Informationen zum Datenschutz bei Umami finden Sie unter:{" "}
           <a
             href="https://umami.is/privacy"
