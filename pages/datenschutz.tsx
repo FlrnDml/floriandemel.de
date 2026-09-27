@@ -11,7 +11,7 @@ const Datenschutz: NextPage = () => {
           name="description"
           content="Datenschutzerklärung - Informationen zum Datenschutz"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
 
       <h1>Datenschutzerklärung</h1>

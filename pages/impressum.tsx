@@ -11,7 +11,7 @@ const Impressum: NextPage = () => {
           name="description"
           content="Impressum - Rechtliche Informationen"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
 
       <h1>Impressum</h1>

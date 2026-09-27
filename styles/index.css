@@ -21,6 +21,9 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -39,7 +42,9 @@ a:hover {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 4rem 1.25rem 3rem;
+  padding-block: 4rem max(3rem, env(safe-area-inset-bottom));
+  padding-inline: max(1.25rem, env(safe-area-inset-left))
+    max(1.25rem, env(safe-area-inset-right));
 }
 
 /* ---------- Profile ---------- */
@@ -58,9 +63,15 @@ a:hover {
 
 .links {
   display: flex;
-  gap: 1.25rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin-top: 0.25rem;
   font-size: 0.95rem;
+}
+
+.links a,
+.footer a {
+  padding-block: 0.6rem;
 }
 
 .links a {
@@ -127,7 +138,8 @@ a:hover {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
-  margin-bottom: 3rem;
+  padding-block: 0.6rem;
+  margin: -0.6rem 0 2.4rem;
 }
 
 .back:hover {
@@ -136,6 +148,7 @@ a:hover {
 
 .post-header h1,
 .page h1 {
+  text-wrap: balance;
   font-size: 2rem;
   line-height: 1.25;
   font-weight: 600;
@@ -215,12 +228,16 @@ pre {
 }
 
 .prose :not(pre) > code {
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   background: var(--code-bg);
   padding: 0.15em 0.35em;
   border-radius: 4px;
 }
 
 .prose pre {
+  -webkit-overflow-scrolling: touch;
   background: var(--code-bg);
   padding: 1rem 1.25rem;
   border-radius: 6px;
@@ -245,6 +262,7 @@ pre {
 .footer nav {
   display: flex;
   gap: 1.25rem;
+  margin-block: -0.6rem;
 }
 
 .footer a {
@@ -257,8 +275,37 @@ pre {
 }
 
 @media (max-width: 520px) {
+  html,
+  body {
+    font-size: 16.5px;
+    line-height: 1.65;
+  }
+
   .container {
-    padding-top: 2.5rem;
+    padding-top: max(2.5rem, env(safe-area-inset-top));
+  }
+
+  .section-title {
+    margin-top: 3rem;
+  }
+
+  .post-header h1,
+  .page h1 {
+    font-size: 1.75rem;
+  }
+
+  .post-meta {
+    margin-bottom: 2rem;
+  }
+
+  .prose pre {
+    margin-inline: -1.25rem;
+    border-radius: 0;
+    padding-inline: 1.25rem;
+  }
+
+  .footer {
+    margin-top: 3.5rem;
   }
 
   .post-list a {

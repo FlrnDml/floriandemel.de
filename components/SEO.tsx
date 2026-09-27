@@ -24,7 +24,10 @@ const SEO: React.FC<SEOProps> = ({
       <title>{title}</title>
       <meta key="description" name="description" content={description} />
       <link key="canonical" rel="canonical" href={canonicalUrl} />
-      <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+      <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+      <meta key="theme-color" name="theme-color" content="#ffffff" />
+      <link key="apple-touch-icon" rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
       {/* Open Graph */}
       <meta key="og:url" property="og:url" content={canonicalUrl} />

@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <script defer src="https://cloud.umami.is/script.js" data-website-id="44f3247d-3c4f-4f77-a8f3-696aa0ec59b8"></script>
       <SEO />
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
 
       <div className={`${GeistSans.variable} ${GeistMono.variable} container`}>
