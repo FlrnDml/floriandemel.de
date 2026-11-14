@@ -28,7 +28,7 @@ besides one short opening line naming the post. Each item:
 - says what the problem is and which guideline it breaks,
 - says concretely what to change (a suggested wording is fine, but as a suggestion).
 
-Order the list by impact: content and structure first, then clarity, then formatting,
+Order the list by impact: title and introduction first, then content and structure, then clarity, then formatting,
 then spelling. Skip guidelines the post already meets. Do not pad the list.
 
 ## Guidelines
@@ -59,18 +59,31 @@ The posts follow the "Cs": Clarity, Conciseness, Coherence and Correctness/Credi
 - Active voice where possible ("The team launched the product", not "The product was
   launched by the team").
 - One idea per paragraph, supported by specific details and examples.
+- Make sure the article does not use many different words for the same concept. Use consistent terminology.
 
 ### 4. Structure and storyline
 
 - A clear structure guides the reader from beginning to end, with a logical
   progression of ideas and argumentative consistency throughout.
+- **First touchpoint:** the title and the introduction decide whether anyone reads
+  the post (in search results, on LinkedIn, on the home page). Both must be really
+  attractive: curious, concrete and relevant to the reader. Review them with extra
+  care and, if they are not compelling, suggest two or three stronger alternatives.
+- **Title first:** the title is specific and makes a clear promise, and the post
+  delivers exactly that promise. Flag a title that is vague or promises something else.
 - Descriptive headings and subheadings that work as signposts for skimming.
-- **Beginning:** the post starts with a **TL;DR** section. Inverted pyramid: the most
+- **Hook:** the first one or two sentences grab attention with a strong statement,
+  a surprising fact or a relatable problem, then say in one sentence what the reader
+  will get from the post. Flag a slow or generic opening.
+- **Beginning:** after the hook, the post has a Inverted pyramid: the most
   important information (the answer or conclusion) first, then supporting details,
   then background.
 - Transitions (however, therefore, in addition, for example) connect ideas.
-- **End:** a very short **Wrap up** that sums up the whole post and outlines the result
-  for the reader.
+- **End:** a very short **Conclusion** that sums up the whole post and outlines the result
+  for the reader. Many readers jump straight to the end, so the Conclusion must make
+  sense on its own and be clearly labeled with its own heading.
+- **Closing question:** the Wrap up ends with a question to the reader (*e.g.* about
+  their own experience) that invites them to respond, for example on LinkedIn.
 
 ### 5. Content depth and reasoning
 
@@ -83,6 +96,10 @@ The posts follow the "Cs": Clarity, Conciseness, Coherence and Correctness/Credi
   anecdotes or case studies. Flag abstract sections without an example.
 - **Technical accuracy:** all technical claims are accurate and verified. Flag anything
   that looks wrong, outdated or unproven.
+- **Sources and links:** claims are backed by links to good external sources
+  (official docs, studies, other authors), not only to Florian's own posts. Links to
+  related posts on this site are welcome too. Flag claims that need a source and
+  places where a link would help the reader go deeper.
 - **Relevance:** the post has one clear purpose (inform, persuade, entertain). Flag
   parts that do not serve it.
 
@@ -90,7 +107,8 @@ The posts follow the "Cs": Clarity, Conciseness, Coherence and Correctness/Credi
 
 - Short paragraphs: **at most 3 sentences**. The article concludes quickly and is a
   nice reading experience.
-- Built for skimming: bold, italics, bullet points and numbered lists highlight key
+- Built for skimming: a subheading every few paragraphs, so no long stretch of text
+  without a signpost. Bold, italics, bullet points and numbered lists highlight key
   information.
 - Lists of **more than 3 items** use bullet points.
 - **Graphics:** point out places where a graphic or diagram would really help. Florian
@@ -114,3 +132,6 @@ The posts follow the "Cs": Clarity, Conciseness, Coherence and Correctness/Credi
 - The post has no `# H1` heading in the body (the title comes from the frontmatter),
   and headings go in order (`##`, then `###`).
 - Images have meaningful alt text and are stored next to `index.md`.
+- **Outreach:** if the post links to other people's work (articles, tools, talks),
+  add one item at the end of the list naming them, as a suggestion to send them a
+  short, friendly message after publishing and ask whether they would share the post.

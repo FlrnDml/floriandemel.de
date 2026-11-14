@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { formatDate, getPosts, type PostSummary } from "../lib/posts";
+import { formatDate } from "../lib/date";
+import { getPosts, type PostSummary } from "../lib/posts";
 
 interface HomeProps {
   posts: PostSummary[];

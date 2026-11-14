@@ -1,0 +1,36 @@
+// Rule set for blog posts in content/posts, based on the markdownlint defaults.
+// Docs for every rule: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "default": true,
+
+  // Prose is written with one paragraph per line, so line length is not limited.
+  "MD013": false,
+
+  // The title comes from the frontmatter; the body starts with "##" headings.
+  "MD025": { "front_matter_title": "^\\s*title\\s*[:=]" },
+  "MD041": false,
+
+  // Consistent styles across all posts.
+  "MD003": { "style": "atx" },
+  "MD004": { "style": "dash" },
+  "MD029": { "style": "ordered" },
+  "MD035": { "style": "---" },
+  "MD046": { "style": "fenced" },
+  "MD048": { "style": "backtick" },
+  "MD049": { "style": "asterisk" },
+  "MD050": { "style": "asterisk" },
+  "MD054": {
+    "autolink": false,
+    "inline": true,
+    "full": false,
+    "collapsed": false,
+    "shortcut": false,
+    "url_inline": false
+  },
+
+  // Same heading text is fine in different sections (e.g. "Example").
+  "MD024": { "siblings_only": true },
+
+  // Planned graphics are marked with <GRAPHIC> while drafting.
+  "MD033": { "allowed_elements": ["GRAPHIC"] }
+}

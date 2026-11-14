@@ -1,7 +1,8 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import SEO from "../../components/SEO";
-import { formatDate, getPost, getPosts, type Post } from "../../lib/posts";
+import { formatDate } from "../../lib/date";
+import { getPost, getPosts, type Post } from "../../lib/posts";
 
 interface PostPageProps {
   post: Post;

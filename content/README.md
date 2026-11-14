@@ -34,6 +34,7 @@ Everything else in this folder stays in the repo only.
    `![Deployment slots overview](./slots.png)`. They are copied and hashed at build time.
 4. Run `npm run dev` and open http://localhost:3000. Drafts are visible in dev only.
 5. Ask Claude Code for feedback with `/review-blog-post <slug>`.
+   Clean up the Markdown with `/format-blog-post <slug>`.
 6. When done, set `draft: false`, commit and deploy.
 
 A missing title, a bad date or a too long description fails the build with a clear

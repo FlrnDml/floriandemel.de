@@ -15,12 +15,3 @@ export function getPosts(): Post[] {
 export function getPost(slug: string): Post | undefined {
   return getPosts().find((post) => post.slug === slug);
 }
-
-export function formatDate(date: string, month: "short" | "long" = "short") {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month,
-    day: month === "long" ? "numeric" : undefined,
-    timeZone: "UTC",
-  });
-}

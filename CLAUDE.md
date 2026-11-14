@@ -112,5 +112,7 @@ than guessing; the owner is responsible for the final legal check.
   generate or rewrite article text unless explicitly asked; review and fixes are fine.
 - To review a post, use the `/review-blog-post` skill (`.claude/skills/review-blog-post`).
   It only returns a numbered list of ideas and never edits the post.
+- To fix the Markdown formatting of a post (links, images, headings, lists), use the
+  `/format-blog-post` skill (`.claude/skills/format-blog-post`). It changes form only, never wording.
 - New posts start with `draft: true`. Drafts are only visible in `npm run dev`.
 - Never publish or link anything from `content/notes/`.

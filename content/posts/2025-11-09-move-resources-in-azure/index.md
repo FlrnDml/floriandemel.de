@@ -110,5 +110,3 @@ After all, it is not easy, but always remember: **Just try it!**
 ## About me
 
 My name is Florian, I am a platform engineer who wants to share his dev experience with you, hoping it makes us all a bit smarter. Please let me know what you think about my post!
-
-In case you want to see more of my posts, you can also find me on [X.com](https://x.com/FlrnDml), where I share all of my content + daily dev news.
